@@ -28,4 +28,12 @@ def create_app(test_config=None):
     def hello():
         return '<h1>Hello World!</h1>'
 
+    # adds cli command to init app and close_db to request teardown
+    from . import db
+    db.init_app(app)
+
+    # register authentication blueprint
+    from . import auth
+    app.register_blueprint((auth.bp))
+
     return app
