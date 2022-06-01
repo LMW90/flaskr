@@ -26,7 +26,7 @@ def create_app(test_config=None):
     # a hello world page
     @app.route('/hello')
     def hello():
-        return '<h1>Hello World!</h1>'
+        return 'Hello, World!'
 
     # adds cli command to init app and close_db to request teardown
     from . import db
